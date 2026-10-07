@@ -1,3 +1,3 @@
-#Gyminator app
+# Gyminator app
 
 This is a workout tracker application. It enables the user to track workout progress in terms of repetitions, sets, weight and such. Over time, statistics of user activity will be shown in graphs showing repetitions, weight or volume increases. This application also keeps in mind users that work out in multiple gyms that have different equipment for the same movement (for example gym A has 2-pulley cables, meanwhile gym B has 4-pulley cables) which accounts for different effort requirements to produce the same force. This enables more precise progressive overload tracking.
