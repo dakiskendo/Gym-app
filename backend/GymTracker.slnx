@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/GymTracker.Api/">
+    <Project Path="GymTracker.Api/GymTracker.Api.csproj" />
+  </Folder>
+</Solution>
