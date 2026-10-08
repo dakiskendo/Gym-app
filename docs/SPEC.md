@@ -58,7 +58,7 @@ Thirteen entities. Every row a user creates carries their `UserId`, and every qu
 | Entity | Key fields | Belongs to |
 | --- | --- | --- |
 | User | Id, Email, DisplayName, Unit (kg/lb) | ASP.NET Core Identity |
-| UserSettings | UserId (primary key), DefaultGymId (nulleable) | User, one per user |
+| UserSettings | UserId (primary key), DefaultGymId (nullable) | User, one per user |
 | RefreshToken | TokenHash, ExpiresAt, RevokedAt, ReplacedBy | User |
 | Gym | Name, City, IsArchived | User |
 | Exercise | Name, PrimaryMuscle, SecondaryMuscles, EquipmentType, IsGymSpecific | Library (UserId null) or a user's custom one |
