@@ -15,6 +15,8 @@ public static class DependencyInjection
         services.AddDbContext<GymTrackerDbContext>(options =>
             options.UseNpgsql(connectionString).UseSnakeCaseNamingConvention());
 
+        services.AddHealthChecks().AddDbContextCheck<GymTrackerDbContext>();
+        
         return services;
     }
 }

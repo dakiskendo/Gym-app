@@ -1,4 +1,5 @@
 using GymTracker.Infrastructure;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddOpenApi();
 builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
+
+app.MapHealthChecks("/api/health");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
