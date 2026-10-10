@@ -7,5 +7,6 @@ public class Gym
     public string? City { get; set; }
     public Guid UserId { get; set; }
     public bool IsArchived { get; set; }
+    public DateTime CreatedAt { get; set; }
 }
 
