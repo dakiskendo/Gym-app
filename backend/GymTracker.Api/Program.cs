@@ -1,5 +1,4 @@
 using GymTracker.Infrastructure;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
