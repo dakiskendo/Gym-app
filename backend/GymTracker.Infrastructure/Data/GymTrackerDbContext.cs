@@ -9,6 +9,7 @@ public class GymTrackerDbContext : DbContext
 
     public DbSet<Gym> Gyms => Set<Gym>();
     public DbSet<UserSettings> UserSettings => Set<UserSettings>();
+    public DbSet<UserProfile> UserProfiles => Set<UserProfile>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

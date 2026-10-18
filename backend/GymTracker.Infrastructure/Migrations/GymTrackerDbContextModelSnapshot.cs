@@ -17,7 +17,7 @@ namespace GymTracker.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.4")
+                .HasAnnotation("ProductVersion", "10.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -63,6 +63,25 @@ namespace GymTracker.Infrastructure.Migrations
                     b.ToTable("gyms", (string)null);
                 });
 
+            modelBuilder.Entity("GymTracker.Domain.Entities.UserProfile", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("user_id");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)")
+                        .HasColumnName("display_name");
+
+                    b.HasKey("UserId")
+                        .HasName("pk_user_profiles");
+
+                    b.ToTable("user_profiles", (string)null);
+                });
+
             modelBuilder.Entity("GymTracker.Domain.Entities.UserSettings", b =>
                 {
                     b.Property<Guid>("UserId")
@@ -73,6 +92,14 @@ namespace GymTracker.Infrastructure.Migrations
                     b.Property<Guid?>("DefaultGymId")
                         .HasColumnType("uuid")
                         .HasColumnName("default_gym_id");
+
+                    b.Property<string>("Unit")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(2)
+                        .HasColumnType("character varying(2)")
+                        .HasDefaultValue("kg")
+                        .HasColumnName("unit");
 
                     b.HasKey("UserId")
                         .HasName("pk_user_settings");
